@@ -1,0 +1,37 @@
+<div *ngIf="loading">
+    Loading...
+</div>
+
+<div class="container app" *ngIf="!loading">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="add-form">
+                <form (ngSubmit)="addCity(f.value.newCity)" #f="ngForm">
+                    <div class="input-group">
+                        <input type="text" class="form-control inline pull-left" ngModel name="newCity">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary">Add City</button>
+                        </span>
+
+                    </div>
+                </form>
+            </div>
+            <div class="chart">
+                <div style="display: block">
+                    <canvas baseChart
+                            [datasets]="barChartData"
+                            [labels]="barChartLabels"
+                            [options]="barChartOptions"
+                            [legend]="barChartLegend"
+                            [chartType]="barChartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
