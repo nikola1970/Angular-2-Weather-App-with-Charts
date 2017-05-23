@@ -70,8 +70,7 @@ export class ChartComponent implements OnInit {
                     this.temps.push(res.main.temp);
                 },
                 error => console.log(error),
-                () => {
-                    this.cities = this.cities.slice();
+                () => { 
                     this.chart.chart.update();
                 }
             );
