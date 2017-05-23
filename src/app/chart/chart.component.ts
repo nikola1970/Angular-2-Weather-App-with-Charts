@@ -65,10 +65,10 @@ export class ChartComponent implements OnInit {
         this.newCityForm.reset();
         this.WeatherService.addCity(newCity).subscribe(
                 city => {
-                    const bla = city.json();
-                    this.cities.push(bla);
-                    this.barChartLabels.push(bla.name);
-                    this.temps.push(bla.main.temp);
+                    const res = city.json();
+                    this.cities.push(res);
+                    this.barChartLabels.push(res.name);
+                    this.temps.push(res.main.temp);
                 },
                 error => console.log(error),
                 () => {
