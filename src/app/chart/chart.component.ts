@@ -51,7 +51,6 @@ export class ChartComponent implements OnInit {
             () => {
                 this.loading = false;
                 this.cities.map(city => {
-                    console.log(city);
                     this.barChartLabels.push(city.name);
                     this.temps.push(city.main.temp);
                 });
